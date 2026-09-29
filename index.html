@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HOUSE OF MOVIES</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html">HOUSE <span>OF</span> MOVIES</a>
+  <nav>
+    <a href="#home">Home</a><a href="#movies">Movies</a><a href="#series">Series</a>
+    <a href="admin.html" class="admin-link">Admin</a>
+  </nav>
+  <div class="search"><input id="searchInput" placeholder="Search movies & series..."><button id="searchBtn">⌕</button></div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">WELCOME TO HOUSE OF MOVIES</p>
+    <h1>Stream your next <span>favorite.</span></h1>
+    <p>Discover movies and series in a clean, fast, modern catalog.</p>
+    <a href="#movies" class="btn primary">Explore Now</a>
+  </div>
+</section>
+
+<section class="section" id="movies">
+  <div class="section-head"><div><p class="eyebrow">DISCOVER</p><h2>Movies</h2></div><select id="genreFilter"><option value="">All genres</option></select></div>
+  <div id="movieGrid" class="grid"></div>
+</section>
+
+<section class="section" id="series">
+  <div class="section-head"><div><p class="eyebrow">BINGE WATCH</p><h2>Series</h2></div></div>
+  <div id="seriesGrid" class="grid"></div>
+</section>
+</main>
+
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+<div id="toast" class="toast"></div>
+<footer>© <span id="year"></span> HOUSE OF MOVIES</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body></html>

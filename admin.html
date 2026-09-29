@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HOUSE OF MOVIES — Admin</title><link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div id="loginView" class="auth-wrap">
+  <form id="loginForm" class="auth-card"><div class="brand">HOUSE <span>OF</span> MOVIES</div><h1>Admin Login</h1>
+  <input id="email" type="email" placeholder="Admin email" required><input id="password" type="password" placeholder="Password" required>
+  <button class="btn primary">Sign in</button><p id="loginError" class="error"></p></form>
+</div>
+
+<div id="appView" class="app hidden">
+<aside><div class="brand">HOUSE <span>OF</span> MOVIES</div><button data-view="dashboard">Dashboard</button><button data-view="titles">Titles</button><button data-view="seasons">Seasons</button><button data-view="episodes">Episodes</button><button id="logout">Sign out</button></aside>
+<main class="admin-main">
+  <div class="mobile-head"><b>Admin Dashboard</b><button id="mobileLogout">Sign out</button></div>
+  <section id="dashboard" class="view"><h1>Dashboard</h1><div class="stats"><div><b id="statTitles">0</b><span>Titles</span></div><div><b id="statMovies">0</b><span>Movies</span></div><div><b id="statSeries">0</b><span>Series</span></div><div><b id="statEpisodes">0</b><span>Episodes</span></div></div></section>
+
+  <section id="titles" class="view hidden"><div class="view-head"><h1>Titles</h1><button class="btn primary" id="newTitle">+ Add title</button></div><div id="titleList" class="table-wrap"></div></section>
+
+  <section id="seasons" class="view hidden"><div class="view-head"><h1>Seasons</h1><button class="btn primary" id="newSeason">+ Add season</button></div><div id="seasonList" class="table-wrap"></div></section>
+
+  <section id="episodes" class="view hidden"><div class="view-head"><h1>Episodes</h1><button class="btn primary" id="newEpisode">+ Add episode</button></div><div id="episodeList" class="table-wrap"></div></section>
+</main></div>
+
+<div id="editor" class="modal hidden"><form id="editorForm" class="modal-card"><button type="button" class="close" id="closeEditor">×</button><h2 id="editorTitle">Add</h2><div id="editorFields"></div>
+    <div id="posterUploadBox" class="upload-box hidden">
+      <label>Poster image<input id="posterFile" type="file" accept="image/*"></label>
+      <small>JPG, PNG or WebP recommended.</small><div id="posterPreview"></div>
+    </div>
+    <div id="qualityLinksBox" class="quality-box hidden">
+      <h3>Download links</h3>
+      <p class="hint">Use links for media you own or are authorized to distribute.</p>
+      <label>480p URL<input id="link480" type="url" placeholder="https://..."></label>
+      <label>720p URL<input id="link720" type="url" placeholder="https://..."></label>
+      <label>1080p URL<input id="link1080" type="url" placeholder="https://..."></label>
+    </div>
+    <button class="btn primary">Save & Publish</button><p id="editorError" class="error"></p></form></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/config.js"></script><script src="js/admin.js"></script>
+</body></html>
